@@ -23,8 +23,8 @@ namespace Mssc.Services.ConnectionManagement
 // <Snippet2>
             // Display the ServicePoint Internet resource address.
             Console.WriteLine("Address = {0} ", sp.Address.ToString());
-
 // </Snippet2>
+
 // <Snippet3>
             // Display the date and time that the ServicePoint was last 
             // connected to a host.
@@ -34,8 +34,8 @@ namespace Mssc.Services.ConnectionManagement
             // is allowed to maintain an idle connection to an Internet  
             // resource before it is recycled for use in another connection.
             Console.WriteLine("MaxIdleTime = " + sp.MaxIdleTime);
-
 // </Snippet3>
+
 // <Snippet4>
             Console.WriteLine("ConnectionName = " + sp.ConnectionName);
 
@@ -46,8 +46,8 @@ namespace Mssc.Services.ConnectionManagement
             // Display the number of connections associated with this 
             // ServicePoint instance.
             Console.WriteLine("CurrentConnections = " + sp.CurrentConnections);
-
 // </Snippet4>
+
 // <Snippet5>
             if (sp.Certificate == null)
                 Console.WriteLine("Certificate = (null)");
@@ -61,12 +61,12 @@ namespace Mssc.Services.ConnectionManagement
 
             Console.WriteLine("ProtocolVersion = " + sp.ProtocolVersion.ToString());
             Console.WriteLine("SupportsPipelining = " + sp.SupportsPipelining);
-
 // </Snippet5>
-            // <Snippet9>
+
+// <Snippet9>
             Console.WriteLine("UseNagleAlgorithm = " + sp.UseNagleAlgorithm.ToString());
             Console.WriteLine("Expect 100-continue = " + sp.Expect100Continue.ToString());
-            //</Snippet9>
+//</Snippet9>
         }
 
 // <Snippet6>
@@ -115,8 +115,8 @@ namespace Mssc.Services.ConnectionManagement
                     res.Close();
             }
         }
-
 // </Snippet6>
+
         // Show the user how to use this program when wrong inputs are entered.
         private static void showUsage()
         {
@@ -158,7 +158,7 @@ namespace Mssc.Services.ConnectionManagement
             // WebRequest-based classes.
             IWebProxy Iproxy = WebRequest.DefaultWebProxy;
 
-            // <Snippet8>
+// <Snippet8>
             // Set the maximum number of ServicePoint instances to 
             // maintain. If a ServicePoint instance for that host already 
             // exists when your application requests a connection to
@@ -171,14 +171,14 @@ namespace Mssc.Services.ConnectionManagement
             // After the idle time expires, the ServicePoint object is eligible for
             // garbage collection and cannot be used by the ServicePointManager object.
             ServicePointManager.MaxServicePointIdleTime = 10000;
+// </Snippet8>
 
-            // </Snippet8>
-            // <Snippet10>
+// <Snippet10>
             ServicePointManager.UseNagleAlgorithm = true;
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.CheckCertificateRevocationList = true;
             ServicePointManager.DefaultConnectionLimit = ServicePointManager.DefaultPersistentConnectionLimit;
-            // </Snippet10>
+// </Snippet10>
             // Create the Uri object for the resource you want to access.
             Uri MS = new Uri("http://msdn.microsoft.com/");
 
