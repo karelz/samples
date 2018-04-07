@@ -173,8 +173,6 @@ namespace Mssc.Services.ConnectionManagement
             ServicePointManager.MaxServicePointIdleTime = 10000;
 
             // </Snippet8>
-
-
             // <Snippet10>
             ServicePointManager.UseNagleAlgorithm = true;
             ServicePointManager.Expect100Continue = true;
@@ -197,11 +195,7 @@ namespace Mssc.Services.ConnectionManagement
             // Make a request with the same scheme identifier and host fragment
             // used to create the previous ServicePoint object.
             makeWebRequest (hashCode, "http://msdn.microsoft.com/library/");
-        
-
-            
         }
-
 // </Snippet7>
     }
 }
