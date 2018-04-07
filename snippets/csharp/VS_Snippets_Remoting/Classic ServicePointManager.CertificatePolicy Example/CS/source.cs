@@ -12,24 +12,23 @@ public class Form1: Form
 // <Snippet1>
 ServicePointManager.CertificatePolicy = new MyCertificatePolicy();
  
-       // Create the request and receive the response
-       try
-       {
-       WebRequest myRequest = WebRequest.Create(myUri);
-       WebResponse myResponse = myRequest.GetResponse();
-       ProcessResponse(myResponse);
-       myResponse.Close();
-       }
-       // Catch any exceptions
-       catch(WebException e)
-       {
-       if (e.Status == WebExceptionStatus.TrustFailure)
-       {
-       // Code for handling security certificate problems goes here.
-       }
-       // Other exception handling goes here
-       }
-   
+// Create the request and receive the response
+try
+{
+    WebRequest myRequest = WebRequest.Create(myUri);
+    WebResponse myResponse = myRequest.GetResponse();
+    ProcessResponse(myResponse);
+    myResponse.Close();
+}
+// Catch any exceptions
+catch(WebException e)
+{
+    if (e.Status == WebExceptionStatus.TrustFailure)
+    {
+        // Code for handling security certificate problems goes here.
+    }
+    // Other exception handling goes here
+}
 // </Snippet1>
  }
 
