@@ -3,13 +3,12 @@ using System.Data;
 using System.Security.Principal;
 using System.Windows.Forms;
 
-public class Form1: Form
+public class Form1 : Form
 {
- protected void Method()
- {
+    protected void Method()
+    {
 // <Snippet1>
-UriBuilder myUri = new UriBuilder("http","www.contoso.com");
-
+        UriBuilder myUri = new UriBuilder("http", "www.contoso.com");
 // </Snippet1>
- }
+    }
 }
