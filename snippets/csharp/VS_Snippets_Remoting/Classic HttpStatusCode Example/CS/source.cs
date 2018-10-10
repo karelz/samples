@@ -3,7 +3,7 @@ using System.Net;
 using System.Web;
 using System.Web.UI;
 
-public class Page1: Page
+public class Page1 : Page
 {
     private void Page_Load(Object sender, EventArgs e)
     {
@@ -13,7 +13,7 @@ public class Page1: Page
  
         HttpWebResponse httpRes = (HttpWebResponse)httpReq.GetResponse();
  
-        if (httpRes.StatusCode==HttpStatusCode.Moved) 
+        if (httpRes.StatusCode == HttpStatusCode.Moved) 
         {
             // Code for moved resources goes here.
         }

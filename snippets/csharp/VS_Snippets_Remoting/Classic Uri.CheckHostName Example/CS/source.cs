@@ -3,13 +3,12 @@ using System.Data;
 using System.Security.Principal;
 using System.Windows.Forms;
 
-public class Form1: Form
+public class Form1 : Form
 {
- protected void Method()
- {
+    protected void Method()
+    {
 // <Snippet1>
-Console.WriteLine(Uri.CheckHostName("www.contoso.com"));
-   
+        Console.WriteLine(Uri.CheckHostName("www.contoso.com"));
 // </Snippet1>
- }
+    }
 }

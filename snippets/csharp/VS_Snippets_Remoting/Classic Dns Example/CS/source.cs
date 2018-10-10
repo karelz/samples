@@ -3,12 +3,12 @@ using System.Data;
 using System.Net;
 using System.Windows.Forms;
 
-public class Form1: Form
+public class Form1 : Form
 {
     protected void Method()
     {
-        // <Snippet1>
+// <Snippet1>
         IPHostEntry hostInfo = Dns.GetHostEntry("www.contoso.com");
-        // </Snippet1>
+// </Snippet1>
     }
 }

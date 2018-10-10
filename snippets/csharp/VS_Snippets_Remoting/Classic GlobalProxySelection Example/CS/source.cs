@@ -3,7 +3,7 @@ using System.Net;
 using System.IO;
 using System.Windows.Forms;
 
-public class Form1: Form
+public class Form1 : Form
 {
     public void Method()
     {

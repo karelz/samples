@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Web;
 using System.Web.Services;
 
-public class Form1: Form
+public class Form1 : Form
 {
     public void Method(Uri myUri)
     {
@@ -34,14 +34,14 @@ public class Form1: Form
 
     // Method added so sample will compile
     public void ProcessResponse(WebResponse resp)
-    {}
+    {
+    }
 }
-
 
 // Class added so sample will compile
 public class MyCertificatePolicy : ICertificatePolicy
 {
-    public bool CheckValidationResult(System.Net.ServicePoint srvPoint, System.Security.Cryptography.X509Certificates.X509Certificate certificate, System.Net.WebRequest request, int certificateProblem)
+    public bool CheckValidationResult(ServicePoint srvPoint, System.Security.Cryptography.X509Certificates.X509Certificate certificate, WebRequest request, int certificateProblem)
     {
         return true;
     }

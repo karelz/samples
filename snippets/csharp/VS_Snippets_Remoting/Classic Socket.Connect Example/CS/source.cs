@@ -30,7 +30,7 @@ public class Sample
             }
             else
             {
-                Console.WriteLine("Disconnected: error code {0}!", e.NativeErrorCode);
+                Console.WriteLine($"Disconnected: error code {e.NativeErrorCode}!");
             }
         }
         finally
@@ -38,7 +38,7 @@ public class Sample
             client.Blocking = blockingState;
         }
 
-        Console.WriteLine("Connected: {0}", client.Connected);
+        Console.WriteLine($"Connected: {client.Connected}");
 // </Snippet1>
     }
 

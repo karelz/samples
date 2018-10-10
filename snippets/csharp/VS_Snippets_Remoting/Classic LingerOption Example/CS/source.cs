@@ -5,13 +5,12 @@ using System.Net.Sockets;
 
 public class Sample
 {
- protected void Method(Socket mySocket)
- {
+    protected void Method(Socket mySocket)
+    {
 // <Snippet1>
- LingerOption myOpts = new LingerOption(true,1);
+        LingerOption myOpts = new LingerOption(true, 1);
  
- mySocket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Linger, myOpts);
- 
+        mySocket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.Linger, myOpts);
 // </Snippet1>
- }
+    }
 }

@@ -20,25 +20,22 @@ using System.Threading;
 
 public class TcpListenerSample
 {
-
-
-    static void Main(string[] args)
+    public static void Main()
     {
         try
         {
-            // set the TcpListener on port 13000
+            // Set the TcpListener on port 13000
             int port = 13000;
             TcpListener server = new TcpListener(IPAddress.Any, port);
 
             // Start listening for client requests
             server.Start();
 
-
             // Buffer for reading data
             byte[] bytes = new byte[1024];
             string data;
 
-            //Enter the listening loop
+            // Enter the listening loop
             while (true)
             {
                 Console.Write("Waiting for a connection... ");
@@ -51,16 +48,13 @@ public class TcpListenerSample
                 // Get a stream object for reading and writing
                 NetworkStream stream = client.GetStream();
 
-                int i;
-
                 // Loop to receive all the data sent by the client.
-                i = stream.Read(bytes, 0, bytes.Length);
-
+                int i = stream.Read(bytes, 0, bytes.Length);
                 while (i != 0)
                 {
                     // Translate data bytes to a ASCII string.
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                    Console.WriteLine(String.Format("Received: {0}", data));
+                    Console.WriteLine($"Received: {data}");
 
                     // Process the data sent by the client.
                     data = data.ToUpper();
@@ -69,10 +63,9 @@ public class TcpListenerSample
 
                     // Send back a response.
                     stream.Write(msg, 0, msg.Length);
-                    Console.WriteLine(String.Format("Sent: {0}", data));
+                    Console.WriteLine($"Sent: {data}");
 
                     i = stream.Read(bytes, 0, bytes.Length);
-
                 }
 
                 // Shutdown and end connection
@@ -81,13 +74,10 @@ public class TcpListenerSample
         }
         catch (SocketException e)
         {
-            Console.WriteLine("SocketException: {0}", e);
+            Console.WriteLine($"SocketException: {e}");
         }
-
-
         Console.WriteLine("Hit enter to continue...");
         Console.Read();
     }
-
 }
 //</Snippet1>
