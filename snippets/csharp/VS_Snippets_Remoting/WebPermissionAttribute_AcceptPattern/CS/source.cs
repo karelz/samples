@@ -6,7 +6,6 @@ By using the 'Accept' and 'Connect' properties of 'WebPermissionAttribute' accep
 has been given to the uri www.contoso.com.
 */
 
-
 using System;
 using System.Net;
 using System.Security;
@@ -14,38 +13,38 @@ using System.Security.Permissions;
 using System.IO;
 using System.Text.RegularExpressions;
 
-
-public class WebPermissionAttribute_AcceptConnect{
-//<Snippet1>    
-[WebPermission(SecurityAction.Deny, AcceptPattern=@"http://www\.contoso\.com/Private/.*")]
-
-public static void CheckAcceptPermission(string uriToCheck) {
-
-    WebPermission permissionToCheck = new WebPermission();
-    permissionToCheck.AddPermission(NetworkAccess.Accept, uriToCheck);
-    permissionToCheck.Demand();
-}
-
-public static void demoDenySite() {
-    //Passes a security check.
-    CheckAcceptPermission("http://www.contoso.com/Public/page.htm");
-    Console.WriteLine("Public page has passed Accept permission check");
-
-    try {
-        //Throws a SecurityException.
-        CheckAcceptPermission("http://www.contoso.com/Private/page.htm");
-        Console.WriteLine("This line will not be printed");
-}
-    catch (SecurityException e) {
-        Console.WriteLine("Expected exception: " + e.Message);
+public class WebPermissionAttribute_AcceptConnect
+{
+//<Snippet1>
+    [WebPermission(SecurityAction.Deny, AcceptPattern=@"http://www\.contoso\.com/Private/.*")]
+    public static void CheckAcceptPermission(string uriToCheck)
+    {
+        WebPermission permissionToCheck = new WebPermission();
+        permissionToCheck.AddPermission(NetworkAccess.Accept, uriToCheck);
+        permissionToCheck.Demand();
     }
 
- }
+    public static void demoDenySite()
+    {
+        // Passes a security check.
+        CheckAcceptPermission("http://www.contoso.com/Public/page.htm");
+        Console.WriteLine("Public page has passed Accept permission check");
 
-//</Snippet1>
-        static void Main()
+        try
         {
-             demoDenySite();
-            
+            // Throws a SecurityException.
+            CheckAcceptPermission("http://www.contoso.com/Private/page.htm");
+            Console.WriteLine("This line will not be printed");
+        }
+        catch (SecurityException e)
+        {
+            Console.WriteLine($"Expected exception: {e.Message}");
         }
     }
+//</Snippet1>
+
+    static void Main()
+    {
+        demoDenySite();
+    }
+}
